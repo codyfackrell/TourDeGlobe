@@ -1,0 +1,9 @@
+POST http://localhost:3000/register
+content-type: application/json
+
+{
+    "firstName": "Cody",
+    "homeCountry": "https://flagcdn.com/w320/us.png",
+    "password": "test",
+    "username": "cody"
+}

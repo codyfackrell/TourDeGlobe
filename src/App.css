@@ -1,0 +1,267 @@
+/* -----------   CSS Reset   ----------------  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	/* vertical-align: baseline; */
+}
+
+/* -----------   Globals   ----------------  */
+
+:root {
+  --slate-gray: #758B98;
+  --powder-blue-hover: #95b3c4;
+  --gray-shadow: #898989;
+  --selected-star: #F5BB00;
+  --seasalt: #F8F8F8;
+  --black: #000;
+  --white: #fff;
+}
+
+*, header, footer {
+  font-family: "Advent Pro", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--seasalt);
+}
+
+h2, .country-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+/* -----------   Header   ----------------  */
+
+header {
+  width: 100vw;
+  height: 10vh;
+  padding: 0 25px;
+  background-color: var(--slate-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 0 10px;
+  color: var(--seasalt);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* -----------   Home Page   ----------------  */
+
+.main-img {
+  width: 100vw;
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1585124841948-a29d16dcf4c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1188&q=80")
+    no-repeat center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -----------   Buttons   ----------------  */
+
+.button {
+  height: 50px;
+  width: 125px;
+  background-color: var(--slate-gray);
+  color: var(--seasalt);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: var(--powder-blue-hover);
+}
+
+.begin-btn {
+  color: var(--slate-gray);
+  background-color: var(--seasalt);
+  position: absolute;
+  box-shadow: 0 0 40px 1px var(--black);
+}
+
+.begin-btn:hover {
+  background-color: var(--slate-gray);
+  color: var(--seasalt);
+}
+
+.card-btns {
+  display: flex; 
+  justify-content: space-around;
+}
+
+/* -----------   Login/Register   ----------------  */
+
+.align-labels {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-self: start;
+}
+
+input, .input {
+  height: 40px;
+  width: 250px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+}
+
+input:focus, .input:focus {
+  outline: none;
+}
+
+.create-login-link {
+  color: var(--black);
+  font-size: 0.9rem;
+  margin-top: 2vh;
+  text-decoration: none;
+}
+
+.not-matching {
+  border: 1px solid red;
+}
+
+/* -----------   Flashcards   ----------------  */
+
+.flashcard {
+  height: 400px;
+  width: 300px;
+  margin-top: 10px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px var(--gray-shadow);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: 3;
+}
+
+.second {
+z-index: 2;
+margin-left: 5px;
+rotate: 2deg;
+}
+
+.third {
+z-index: 1;
+margin-left: 10px;
+rotate: 4deg;
+}
+
+.star {
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  color: var(--gray-shadow);
+}
+
+.star-selected {
+  color: var(--selected-star)
+}
+
+.flag-img-container {
+ display: flex;
+ justify-content: center;
+ min-height: 150px;
+}
+
+.flag-img {
+  max-width: 85%;
+  max-height: 150px;
+  border: 1px solid var(--gray-shadow);
+}
+
+/*   Flashcard - Front  */
+
+.country-info {
+  margin: 10px 15px;
+  font-size: 1.2rem;
+}
+
+tr, td {
+  padding: 5px 5px;
+}
+
+
+/*   Flashcard - Back  */
+
+.back {
+  display: flex;
+  flex-direction: column;
+}
+
+.country-name {
+  margin: 10px 0 15px 0;
+}
+
+.map-link {
+  text-align: center;
+  text-decoration: none;
+  padding: 28px 0;
+  color: var(--black)
+}
+
+/* -----------   Footer   ----------------  */
+
+footer {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
