@@ -5,7 +5,7 @@ import BackFlashcard from "./BackFlashcard";
 import Star from "./Star";
 
 const DisplayedFlashcard = () => {
-  const authContext = useContext(CountryContext)
+  const countryContext = useContext(CountryContext)
 
   const [flashcard, setFlashcard] = useState(true);
 
@@ -14,12 +14,12 @@ const DisplayedFlashcard = () => {
   };
 
   const handleNext = () => {  
-    authContext.retrieveCountry();
+    countryContext.retrieveCountry();
     setFlashcard(true);
   };
 
   useEffect(() => {
-    authContext.retrieveCountry()
+    countryContext.retrieveCountry()
   }, [])
 
   return (
@@ -27,13 +27,13 @@ const DisplayedFlashcard = () => {
       <Star />
       {flashcard ? (
         <FrontFlashcard
-          displayCountry={authContext.randomCountry}
+          displayCountry={countryContext.randomCountry}
           handleFlip={handleFlip}
           handleNext={handleNext}
         />
       ) : (
         <BackFlashcard
-          displayCountry={authContext.randomCountry}
+          displayCountry={countryContext.randomCountry}
           handleFlip={handleFlip}
           handleNext={handleNext}
         />
