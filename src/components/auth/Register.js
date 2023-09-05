@@ -37,7 +37,7 @@ const Register = () => {
     axios.post('http://localhost:4000/register', body)
     .then((res) => {
       navigate('/')
-      authContext.login(res.data.token, res.data.exp, res.data.userId)
+      authContext.login(res.data.token, res.data.exp, res.data.userId, res.data.homeCountry)
       console.log("AUTH COMPLETED", res.data)
     })
     .catch((err) => {

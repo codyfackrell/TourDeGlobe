@@ -7,11 +7,12 @@ const Header = () => {
 
   return (
     <header>
-      <Link to="/" >Logo</Link>
+      <Link to="/">Logo</Link>
         {authContext.token ? (
           <nav>
             <Link className="nav-link" to="/savedCountries">SAVED COUNTRIES</Link>
             <a className="nav-link" onClick={authContext.login} href="/" >LOGOUT</a>
+            <img className="home-country-flag" src={`${authContext.homeCountry}`}/>
           </nav>
         ) : (
           <nav>

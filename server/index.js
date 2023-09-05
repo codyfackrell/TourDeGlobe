@@ -1,6 +1,6 @@
 const { sequelize } =require('./util/database');
-const { Users } = require("./models/users");
-const { savedCountries } = require("./models/savedCountries");
+const { Users } = require("./models/usersModel");
+const { savedCountries } = require("./models/savedCountriesModel");
 
 require('dotenv').config()
 const {PORT} = process.env;
@@ -27,8 +27,8 @@ app.post('/login', login);
 /* --------   Saved Countries Endpoints   --------  */
 
 app.get('/saved-countries/:userId', getUsersCountries)
-app.post('/saved-countries/:id', addCountry)
-app.delete('/saved-countries/:id', deleteCountry)
+app.post('/saved-countries/', addCountry)
+app.delete('/saved-countries/:countryCode', deleteCountry)
 
 
 sequelize.sync()

@@ -1,19 +1,47 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CountryContext from "../../store/countryContext";
 import AuthContext from "../../store/authContext";
+import axios from "axios";
 import { AiTwotoneStar } from "react-icons/ai";
 
 const Star = () => {
-  const countryContext = useContext(AuthContext)
-  const authContext = useContext(AuthContext)
+  const countryContext = useContext(CountryContext);
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const [starSelected, setStarSelected] = useState(false) 
+  const [starSelected, setStarSelected] = useState(false);
 
-    const starClick = () => {
-        !starSelected ? setStarSelected(true) : setStarSelected(false)
-    };
+  const starClick = () => {
+    const countryCode = countryContext.countryCode;
+    const userId = authContext.userId;
 
-  return <AiTwotoneStar className={`star ${starSelected ? "star-selected" : ""}`} onClick={starClick}/>;
+    if (authContext.token) {
+      if (starSelected) {
+        // removing from savedCountries
+        setStarSelected(false);
+        axios.delete(`http://localhost:4000/saved-countries/${countryCode}`, {
+          data: { userId: userId },
+        });
+      } else {
+        // adding to savedCountries
+        setStarSelected(true);
+        axios.post(`http://localhost:4000/saved-countries`, {
+          countryCode,
+          userId,
+        });
+      }
+    } else {
+      navigate("/login");
+    }
+  };
+
+  return (
+    <AiTwotoneStar
+      className={`star ${starSelected ? "star-selected" : ""}`}
+      onClick={starClick}
+    />
+  );
 };
 
 export default Star;

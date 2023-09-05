@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { Users } = require("../models/users");
+const { Users } = require("../models/usersModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = process.env;
@@ -77,6 +77,7 @@ module.exports = {
           res.status(200).send({
             username: foundUser.dataValues.username,
             userId: foundUser.dataValues.id,
+            homeCountry: foundUser.dataValues.homeCountry,
             token: token,
             exp: exp,
           });

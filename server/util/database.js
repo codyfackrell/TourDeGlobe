@@ -4,6 +4,9 @@ const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
   dialect: "postgres",
+  define:{
+    timestamps: false,
+  },
   dialectOptions: {
     ssl: {
       rejectUnauthorized: false,

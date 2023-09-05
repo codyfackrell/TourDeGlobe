@@ -43,6 +43,7 @@ export const AuthContextProvider = (props) => {
 
   const [token, setToken] = useState(initialToken);
   const [userId, setUserId] = useState(null);
+  const [homeCountry, setHomeCountry] = useState("")
 
   const logout = () => {
     setToken(null);
@@ -56,9 +57,12 @@ export const AuthContextProvider = (props) => {
     }
   };
 
-  const login = (token, exp, userId) => {
+  const login = (token, exp, userId, homeCountry) => {
     setToken(token);
     setUserId(userId);
+    setHomeCountry(homeCountry)
+    console.log(homeCountry)
+    console.log(userId)
     localStorage.setItem("token", token);
     localStorage.setItem("expTime", exp);
     localStorage.setItem("userId", userId);
@@ -71,6 +75,7 @@ export const AuthContextProvider = (props) => {
   const contextValue = {
     token,
     userId,
+    homeCountry,
     login, 
     logout,
   };

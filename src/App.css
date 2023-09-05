@@ -76,6 +76,10 @@ nav {
   cursor: pointer;
 }
 
+.home-country-flag {
+  height: 20px;
+}
+
 /* -----------   Home Page   ----------------  */
 
 .main-img {
