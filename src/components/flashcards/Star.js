@@ -1,16 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CountryContext from "../../store/countryContext";
 import AuthContext from "../../store/authContext";
 import axios from "axios";
 import { AiTwotoneStar } from "react-icons/ai";
 
-const Star = () => {
+const Star = ({starSelected, setStarSelected}) => {
   const countryContext = useContext(CountryContext);
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const [starSelected, setStarSelected] = useState(false);
 
   const starClick = () => {
     const countryCode = countryContext.countryCode;

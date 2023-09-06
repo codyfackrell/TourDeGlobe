@@ -8,6 +8,7 @@ const DisplayedFlashcard = () => {
   const countryContext = useContext(CountryContext)
 
   const [flashcard, setFlashcard] = useState(true);
+  const [starSelected, setStarSelected] = useState(false);
 
   const handleFlip = () => {
     flashcard ? setFlashcard(false) : setFlashcard(true);
@@ -16,6 +17,7 @@ const DisplayedFlashcard = () => {
   const handleNext = () => {  
     countryContext.retrieveCountry();
     setFlashcard(true);
+    setStarSelected(false)
   };
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const DisplayedFlashcard = () => {
 
   return (
     <div className="flashcard">
-      <Star />
+      <Star starSelected={starSelected} setStarSelected={setStarSelected} />
       {flashcard ? (
         <FrontFlashcard
           displayCountry={countryContext.randomCountry}

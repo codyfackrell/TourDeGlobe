@@ -11,7 +11,7 @@ const Header = () => {
         {authContext.token ? (
           <nav>
             <Link className="nav-link" to="/savedCountries">SAVED COUNTRIES</Link>
-            <a className="nav-link" onClick={authContext.login} href="/" >LOGOUT</a>
+            <a className="nav-link" onChange={authContext.login} href="/" >LOGOUT</a>
             <img className="home-country-flag" src={`${authContext.homeCountry}`}/>
           </nav>
         ) : (
