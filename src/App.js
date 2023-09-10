@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { CountryProvider } from "./store/countryContext";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import Login from "./components/auth/Login";
@@ -12,7 +11,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <CountryProvider>
         <Header />
         <main>
           <Routes>
@@ -24,7 +22,6 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </CountryProvider>
     </div>
   );
 }

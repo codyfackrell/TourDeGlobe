@@ -61,6 +61,11 @@ header {
   align-items: center;
 }
 
+.logo-img {
+  height: 7.5vh;
+  padding-right: 10px;
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -74,6 +79,12 @@ nav {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
 }
 
 .home-country-flag {
@@ -92,6 +103,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.home-footer {
+  color: red
 }
 
 /* -----------   Buttons   ----------------  */
@@ -233,7 +248,7 @@ rotate: 4deg;
 
 /*   Flashcard - Front  */
 
-.country-info {
+.country-info  {
   margin: 10px 15px;
   font-size: 1.2rem;
 }

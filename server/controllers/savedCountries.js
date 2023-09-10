@@ -18,8 +18,22 @@ module.exports = {
   },
 
   getUsersCountries: async (req, res) => {
-    console.log("getUsersCountries");
-    res.sendStatus(200);
+    try {
+      const { userId } = req.params;
+
+      const savedCountriesData = await savedCountries.findAll({
+        where: { UserId: userId },
+      });
+
+      const countryCodeList = savedCountriesData.map((country) => country.countryCode)
+
+      res.status(200).send({
+        countryCode: countryCodeList,
+      });
+    } catch (err) {
+      console.log("Error", err);
+      res.sendStatus(400);
+    }
   },
 
   deleteCountry: async (req, res) => {

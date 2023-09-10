@@ -8,7 +8,18 @@ import { AiTwotoneStar } from "react-icons/ai";
 const Star = ({starSelected, setStarSelected}) => {
   const countryContext = useContext(CountryContext);
   const authContext = useContext(AuthContext);
+  const usersCountries = countryContext.usersCountryCodes;
+  const currentCountry = countryContext.countryCode;
+
   const navigate = useNavigate();
+
+  console.log(usersCountries, currentCountry)
+
+  if(!usersCountries.includes(`${currentCountry}`)) {
+    setStarSelected(false)
+  } else {
+    setStarSelected(true)
+  }
 
   const starClick = () => {
     const countryCode = countryContext.countryCode;

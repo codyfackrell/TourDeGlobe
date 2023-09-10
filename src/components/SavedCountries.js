@@ -1,19 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import DisplayedFlashcard from "./flashcards/DisplayedFlashcard";
-import AuthContext from "../store/authContext";
+import CountryContext from "../store/countryContext";
 
 const SavedCountries = () => {
-  const authContext = useContext(AuthContext);
-  const userId = authContext.userId;
-
-  const [usersCountries, setUsersCountries] = useState([]);
+  const countryContext = useContext(CountryContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/saved-countries/${userId}`).then((res) => {
-      setUsersCountries(res.data);
-    });
-  });
+    countryContext.retrieveUsersCountries();
+  }, []);
 
   return (
     <>

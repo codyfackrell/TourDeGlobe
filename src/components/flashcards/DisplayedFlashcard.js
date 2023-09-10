@@ -20,10 +20,6 @@ const DisplayedFlashcard = () => {
     setStarSelected(false)
   };
 
-  useEffect(() => {
-    countryContext.retrieveCountry()
-  }, [])
-
   return (
     <div className="flashcard">
       <Star starSelected={starSelected} setStarSelected={setStarSelected} />
