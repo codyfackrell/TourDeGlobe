@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import DisplayedFlashcard from "./flashcards/DisplayedFlashcard";
 import CountryContext from "../store/countryContext";
 
