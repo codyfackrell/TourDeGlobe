@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, createContext } from "react";
-import initialCountry from "./initialCountry";
+import initialCountry from "../assets/initialCountry";
 
 const CountryContext = createContext();
 

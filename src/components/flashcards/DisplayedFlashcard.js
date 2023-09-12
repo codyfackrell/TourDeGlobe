@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import CountryContext from "../../store/countryContext";
 import FrontFlashcard from "./FrontFlashcard";
 import BackFlashcard from "./BackFlashcard";
 import Star from "./Star";
 
 const DisplayedFlashcard = () => {
-  const countryContext = useContext(CountryContext)
+  const countryContext = useContext(CountryContext);
+
+  let location = useLocation();
+  let savedCountriesRoute = location.pathname === "/savedCountries";
 
   const [flashcard, setFlashcard] = useState(true);
   const [starSelected, setStarSelected] = useState(false);
@@ -14,10 +18,10 @@ const DisplayedFlashcard = () => {
     flashcard ? setFlashcard(false) : setFlashcard(true);
   };
 
-  const handleNext = () => {  
-    countryContext.retrieveCountry();
+  const handleNext = () => {
+    {savedCountriesRoute ? countryContext.retrieveUsersCountries() : countryContext.retrieveCountry()}
     setFlashcard(true);
-    setStarSelected(false)
+    setStarSelected(false);
   };
 
   return (

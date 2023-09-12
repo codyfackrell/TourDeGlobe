@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../store/authContext";
 import logo from "../assets/logo.png";
 
 const Header = () => {
   const authContext = useContext(AuthContext);
+
+  let location = useLocation();
+  let savedCountriesRoute = location.pathname === "/savedCountries";
 
   return (
     <header>
@@ -14,9 +17,15 @@ const Header = () => {
       </Link>
       {authContext.token ? (
         <nav>
-          <Link className="nav-link" to="/savedCountries">
-            SAVED COUNTRIES
-          </Link>
+          {savedCountriesRoute ? (
+            <Link className="nav-link" to="/countries">
+              ALL FLASHCARDS
+            </Link>
+          ) : (
+            <Link className="nav-link" to="/savedCountries">
+              SAVED COUNTRIES
+            </Link>
+          )}
           <a className="nav-link" onClick={authContext.logout} href="/">
             LOGOUT
           </a>

@@ -21,7 +21,7 @@ function App() {
             <Route path="/savedCountries" element={<SavedCountries />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }
