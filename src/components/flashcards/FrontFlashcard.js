@@ -1,10 +1,12 @@
 import React from "react";
+import Star from "./Star";
 
-const FrontFlashcard = ({ displayCountry, handleFlip, handleNext }) => {  
+
+const FrontFlashcard = ({ displayCountry, handleFlip, handleNext}) => {  
   const langugages = Object.values(displayCountry.languages).map((language) => language)
 
   return (
-    <>
+    <div className="front">
       <div className="flag-img-container">
         <img
           className="flag-img"
@@ -37,7 +39,7 @@ const FrontFlashcard = ({ displayCountry, handleFlip, handleNext }) => {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

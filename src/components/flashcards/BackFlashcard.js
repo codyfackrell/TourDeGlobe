@@ -1,6 +1,7 @@
 import React from "react";
+import Star from "./Star";
 
-const BackFlashcard = ({ displayCountry, handleFlip, handleNext }) => {
+const BackFlashcard = ({displayCountry, handleFlip, handleNext }) => {
   return (
     <div className="back">
       <h3 className="country-name">{displayCountry.name.common}</h3>
@@ -22,7 +23,9 @@ const BackFlashcard = ({ displayCountry, handleFlip, handleNext }) => {
         <button className="button" onClick={handleFlip}>
           Back to Details
         </button>
-        <button className="button" onClick={handleNext}>Next</button>
+        <button className="button" onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );

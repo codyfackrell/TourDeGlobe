@@ -193,37 +193,89 @@ input:focus, .input:focus {
 
 /* -----------   Flashcards   ----------------  */
 
-.flashcard {
+.flippable-card-container {
   height: 400px;
   width: 300px;
+  perspective: 1000px;
+  position: absolute;
+  top: 50%; 
+  margin-top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(180deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(.57,.21,.69,1.25);
+}
+
+.flip-exit-done {
+  transform: rotateY(180deg);
+}
+
+.flip-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+  transform: rotateY(0deg);
+  transition: transform 300ms;
+  transition-timing-function: cubic-bezier(.57,.21,.69,1.25);
+}
+
+.flip-enter-done {
+  transform: rotateY(0deg);
+}
+
+.flashcard {
   margin-top: 10px;
   background-color: var(--white);
   border: 1px solid var(--black);
   border-radius: 10px;
   box-shadow: 1px 1px 6px var(--gray-shadow);
+ }
+
+ .displayed-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+}
+
+.second, .third {
+  height: 400px;
+  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
-  z-index: 3;
+  z-index: 0;
 }
 
 .second {
-z-index: 2;
-margin-left: 5px;
-rotate: 2deg;
+  margin-left: 5px;
+  rotate: 2deg;
+  z-index: 2;
 }
 
 .third {
-z-index: 1;
-margin-left: 10px;
-rotate: 4deg;
+  margin-left: 10px;
+  rotate: 4deg;
+  z-index: 1;
 }
 
 .star {
   font-size: 20px;
   margin: 10px 0 0 10px;
   color: var(--gray-shadow);
+  transform: none;
 }
 
 .star-selected {
@@ -242,6 +294,16 @@ rotate: 4deg;
   border: 1px solid var(--gray-shadow);
 }
 
+.front, .back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: 10%;
+}
+
+
 /*   Flashcard - Front  */
 
 .country-info  {
@@ -259,6 +321,7 @@ tr, td {
 .back {
   display: flex;
   flex-direction: column;
+  transform: rotateY(180deg);
 }
 
 .country-name {

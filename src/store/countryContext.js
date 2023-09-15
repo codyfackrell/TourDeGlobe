@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState, createContext } from "react";
+import axios from "axios";
 import initialCountry from "../assets/initialCountry";
 
 const CountryContext = createContext();
@@ -30,8 +30,6 @@ export function CountryProvider(props) {
       setCountryCode(res.data[0].cca2)
     })
   };
-
-  // console.log(usersCountryCodes)
 
   const contextValue = {
     randomCountry,

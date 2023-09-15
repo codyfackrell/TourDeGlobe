@@ -1,45 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import CountryContext from "../../store/countryContext";
 import FrontFlashcard from "./FrontFlashcard";
 import BackFlashcard from "./BackFlashcard";
 import Star from "./Star";
 
-const DisplayedFlashcard = () => {
+const DisplayedFlashcard = ({
+  starSelected,
+  setStarSelected,
+  handleFlip,
+  handleNext,
+}) => {
   const countryContext = useContext(CountryContext);
 
-  let location = useLocation();
-  let savedCountriesRoute = location.pathname === "/savedCountries";
-
-  const [flashcard, setFlashcard] = useState(true);
-  const [starSelected, setStarSelected] = useState(false);
-
-  const handleFlip = () => {
-    flashcard ? setFlashcard(false) : setFlashcard(true);
-  };
-
-  const handleNext = () => {
-    {savedCountriesRoute ? countryContext.retrieveUsersCountries() : countryContext.retrieveCountry()}
-    setFlashcard(true);
-    setStarSelected(false);
-  };
-
   return (
-    <div className="flashcard">
+    <div className="flashcard displayed-card">
       <Star starSelected={starSelected} setStarSelected={setStarSelected} />
-      {flashcard ? (
-        <FrontFlashcard
-          displayCountry={countryContext.randomCountry}
-          handleFlip={handleFlip}
-          handleNext={handleNext}
-        />
-      ) : (
-        <BackFlashcard
-          displayCountry={countryContext.randomCountry}
-          handleFlip={handleFlip}
-          handleNext={handleNext}
-        />
-      )}
+      <FrontFlashcard
+        displayCountry={countryContext.randomCountry}
+        handleFlip={handleFlip}
+        handleNext={handleNext}
+      />
+      <BackFlashcard
+        displayCountry={countryContext.randomCountry}
+        handleFlip={handleFlip}
+        handleNext={handleNext}
+      />
     </div>
   );
 };
