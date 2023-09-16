@@ -17,7 +17,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	/* vertical-align: baseline; */
 }
 
 /* -----------   Globals   ----------------  */
@@ -191,6 +190,10 @@ input:focus, .input:focus {
   border: 1px solid red;
 }
 
+.register-form {
+  height: 100vh;
+}
+
 /* -----------   Flashcards   ----------------  */
 
 .flippable-card-container {
@@ -338,15 +341,10 @@ tr, td {
 /* -----------   Footer   ----------------  */
 
 .footer {
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  bottom: 5%;
 }
 
 .home-footer {
-  display: flex;
-  align-self: flex-end;
   color: var(--seasalt);
-  margin-bottom: 25px;
 }

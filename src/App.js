@@ -5,7 +5,6 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Flashcards from "./components/flashcards/Flashcards";
 import SavedCountries from "./components/SavedCountries";
-import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
             <Route path="/savedCountries" element={<SavedCountries />} />
           </Routes>
         </main>
-        {/* <Footer /> */}
     </div>
   );
 }

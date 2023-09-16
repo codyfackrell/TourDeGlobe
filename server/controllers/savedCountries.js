@@ -1,4 +1,3 @@
-const savedCountriesModel = require("../models/savedCountriesModel");
 const { savedCountries } = require("../models/savedCountriesModel");
 
 module.exports = {

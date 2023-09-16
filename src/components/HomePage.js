@@ -7,7 +7,7 @@ const HomePage = () => {
       <Link className="button begin-btn" to="/countries">
         Begin
       </Link>
-      <footer className="home-footer">codyfackrell, 2023</footer>
+      <footer className="footer home-footer">codyfackrell, 2023</footer>
     </div>
   );
 };

@@ -1,6 +1,4 @@
 import React from "react";
-import Star from "./Star";
-
 
 const FrontFlashcard = ({ displayCountry, handleFlip, handleNext}) => {  
   const langugages = Object.values(displayCountry.languages).map((language) => language)

@@ -23,7 +23,7 @@ const Login = () => {
     })
   };
 
-  return (
+  return (    
     <div className="align-labels">
       <form onSubmit={submitHandler} >
         <label>Username</label>
@@ -31,11 +31,11 @@ const Login = () => {
         <label>Password</label>
         <input onChange={(e) => setPassword(e.target.value)} type="password"/>
         <button className="button">Login</button>
-
         <Link className="create-login-link" to="/register">
           Create an Account
         </Link>
       </form>
+      <footer className="footer">codyfackrell, 2023</footer>
     </div>
   );
 };

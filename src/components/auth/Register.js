@@ -4,7 +4,6 @@ import axios from "axios";
 import CountrySelector from "../../assets/CountrySelector";
 import AuthContext from "../../store/authContext";
 
-
 const Register = () => {
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
@@ -50,7 +49,7 @@ const Register = () => {
 
   return (
     <div className="align-labels">
-      <form onSubmit={submitHandler} >
+      <form onSubmit={submitHandler} className="register-form">
         <label>First Name</label>
         <input onChange={(e) => setFirstName(e.target.value)} />
         <label>Home Country</label>
