@@ -22,13 +22,20 @@ export function CountryProvider(props) {
     const getUsersSavedCountryCodes = await axios.get(`http://localhost:4000/saved-countries/${userId}`)
     const userCountryCodeList = getUsersSavedCountryCodes.data.countryCode;
     setUsersCountryCodes(userCountryCodeList)
-    const random = Math.floor(Math.random(userCountryCodeList) * userCountryCodeList.length);
-    const countryCode = userCountryCodeList[random]
+
     
-    axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`).then((res) => {
-      setRandomCountry(res.data[0])
-      setCountryCode(res.data[0].cca2)
-    })
+    if(userCountryCodeList.length === 0) {
+      return
+    } else {
+      const random = Math.floor(Math.random(userCountryCodeList) * userCountryCodeList.length);
+      const countryCode = userCountryCodeList[random];
+
+      axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`).then((res) => {
+        setRandomCountry(res.data[0])
+        setCountryCode(res.data[0].cca2)
+      })
+    }
+
   };
 
   console.log(countryCode)
