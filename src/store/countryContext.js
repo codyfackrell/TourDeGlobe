@@ -31,6 +31,8 @@ export function CountryProvider(props) {
     })
   };
 
+  console.log(countryCode)
+
   const contextValue = {
     randomCountry,
     countryCode,

@@ -4,11 +4,13 @@ import { CSSTransition } from "react-transition-group";
 import CountryContext from "../../store/countryContext";
 import DisplayedFlashcard from "./DisplayedFlashcard";
 
+import { useStarContext } from "../../store/starContext";
+
 const Flashcards = () => {
   const countryContext = useContext(CountryContext);
+  const { setStarSelected } = useStarContext();
 
   const [flashcard, setFlashcard] = useState(true);
-  const [starSelected, setStarSelected] = useState(false);
 
   let location = useLocation();
   let savedCountriesRoute = location.pathname === "/savedCountries";
@@ -37,8 +39,6 @@ const Flashcards = () => {
       <div className="flippable-card-container">
         <CSSTransition in={flashcard} timeout={300} classNames="flip">
           <DisplayedFlashcard
-            starSelected={starSelected}
-            setStarSelected={setStarSelected}
             handleFlip={handleFlip}
             handleNext={handleNext}
           />

@@ -1,20 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import CountryContext from "../../store/countryContext";
 import FrontFlashcard from "./FrontFlashcard";
 import BackFlashcard from "./BackFlashcard";
 import Star from "./Star";
 
-const DisplayedFlashcard = ({
-  starSelected,
-  setStarSelected,
-  handleFlip,
-  handleNext,
-}) => {
+const DisplayedFlashcard = ({ handleFlip, handleNext }) => {
   const countryContext = useContext(CountryContext);
 
   return (
     <div className="flashcard displayed-card">
-      <Star starSelected={starSelected} setStarSelected={setStarSelected} />
+      <Star />
       <FrontFlashcard
         displayCountry={countryContext.randomCountry}
         handleFlip={handleFlip}

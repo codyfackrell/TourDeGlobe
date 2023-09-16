@@ -1,20 +1,23 @@
 import React from "react";
 import { AuthContextProvider } from "./store/authContext";
+import { CountryProvider } from "./store/countryContext";
+import { StarProvider } from "./store/starContext";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { CountryProvider } from "./store/countryContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <CountryProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <StarProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+          </StarProvider>
       </CountryProvider>
     </AuthContextProvider>
   </React.StrictMode>
