@@ -47,6 +47,7 @@ module.exports = {
         res.status(200).send({
           username: newUser.dataValues.username,
           userId: newUser.dataValues.id,
+          homeCountry: newUser.dataValues.homeCountry,
           token: token,
           exp: exp,
         });
