@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <Link to="/" className="nav-link logo-name">
         <img src={logo} alt="world-logo" className="logo-img" />
-        Country Flashcards
+        Tour de Globe
       </Link>
       {authContext.token ? (
         <nav>
