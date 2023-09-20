@@ -18,24 +18,29 @@ Tech Stack:
 <br>
 
 ***Home Page View:***
-![homepage](app_screenshots/HomePage.png) 
+![HomePage](app_screenshots/HomePage.png) 
 
 <br>
 
 ***All Country Flashcards:***
-![homepage](app_screenshots/Flashcards.png) 
+![Flashcards](app_screenshots/Flashcards.png) 
 
 <br>
 
 ***Saved Country Flashcards:***
-![homepage](app_screenshots/SavedCountries.png) 
+![SavedCountry](app_screenshots/SavedCountries.png) 
 
 <br>
 
 ***Login Page:***
-![homepage](app_screenshots/Login.png) 
+![Login](app_screenshots/Login.png) 
 
 <br>
 
 ***Register Page:***
-![homepage](app_screenshots/Register.png) 
+![Register](app_screenshots/Register.png) 
+
+<br>
+
+***Flashcard Animation:***
+![flashcard-animation](app_screenshots/falshcard-animation.mp4) 
