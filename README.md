@@ -8,12 +8,11 @@
 
 
 Tech Stack:
-* HTML5/CSS
 * React
 * Node.js
-* Express.js
+* Express
 * PostgreSQL
-* Sequelize*
+* Sequelize
 
 <br>
 
