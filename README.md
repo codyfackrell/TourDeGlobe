@@ -43,4 +43,4 @@ Tech Stack:
 <br>
 
 ***Flashcard Animation:***
-![flashcard-animation](app_screenshots/falshcard-animation.mp4) 
+https://github.com/codyfackrell/countryFlashcards/assets/115325371/1fedf04b-3e44-4e05-94b4-10b1b6b4a974
