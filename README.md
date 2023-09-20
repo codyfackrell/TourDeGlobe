@@ -44,3 +44,5 @@ Tech Stack:
 
 ***Flashcard Animation:***
 ![](https://github.com/codyfackrell/countryFlashcards/assets/115325371/1fedf04b-3e44-4e05-94b4-10b1b6b4a974)
+https://github.com/codyfackrell/countryFlashcards/assets/115325371/1fedf04b-3e44-4e05-94b4-10b1b6b4a974
+
