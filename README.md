@@ -22,4 +22,20 @@ Tech Stack:
 
 <br>
 
-***Track Page View:***
+***All Country Flashcards:***
+![homepage](app_screenshots/Flashcards.png) 
+
+<br>
+
+***Saved Country Flashcards:***
+![homepage](app_screenshots/SavedCountries.png) 
+
+<br>
+
+***Login Page:***
+![homepage](app_screenshots/Login.png) 
+
+<br>
+
+***Register Page:***
+![homepage](app_screenshots/Register.png) 
